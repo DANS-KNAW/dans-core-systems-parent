@@ -67,6 +67,7 @@
         <license-maven-plugin.version>4.6</license-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
+        <sortpom-maven-plugin.version>4.0.0</sortpom-maven-plugin.version>
 
         <!-- Library versions -->
         <dropwizard.version>3.0.16</dropwizard.version>
@@ -503,7 +504,7 @@
                 <plugin>
                     <groupId>com.github.ekryd.sortpom</groupId>
                     <artifactId>sortpom-maven-plugin</artifactId>
-                    <version>4.0.0</version>
+                    <version>${sortpom-maven-plugin.version}</version>
                     <configuration>
                         <nrOfIndentSpace>4</nrOfIndentSpace>
                         <indentBlankLines>false</indentBlankLines>
@@ -515,6 +516,8 @@
                         <sortDependencies/>
                         <keepBlankLines>true</keepBlankLines>
                         <expandEmptyElements>false</expandEmptyElements>
+                        <verifyFail>stop</verifyFail>
+                        <verifyFailOn>strict</verifyFailOn>
                     </configuration>
                 </plugin>
 
@@ -648,7 +651,9 @@
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${license-maven-plugin.version}</version>
                     <configuration>
-                        <inlineHeader>Copyright (C) ${project.inceptionYear} ${owner} (${email})
+                        <!-- @formatter:off -->
+                        <inlineHeader><![CDATA[
+Copyright (C) ${project.inceptionYear} ${owner} (${email})
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -660,7 +665,9 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.</inlineHeader>
+limitations under the License.
+]]></inlineHeader>
+                        <!-- @formatter:on -->
                         <properties>
                             <owner>DANS - Data Archiving and Networked Services</owner>
                             <email>info@dans.knaw.nl</email>
@@ -747,6 +754,19 @@ limitations under the License.</inlineHeader>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.github.ekryd.sortpom</groupId>
+                <artifactId>sortpom-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>verify-pom-order</id>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
