@@ -16,18 +16,17 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nl.datastations</groupId>
     <artifactId>dans-core-systems-parent</artifactId>
     <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>DANS Core Systems Parent POM</name>
-    <description>
-        Parent POM for DANS Core Systems libraries
-    </description>
+    <description>Parent POM for DANS Core Systems libraries</description>
     <url>https://dans-knaw.github.io/${project.artifactId}</url>
+    <inceptionYear>2026</inceptionYear>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -41,13 +40,11 @@
             <organizationUrl>https://dans.knaw.nl</organizationUrl>
         </developer>
     </developers>
-    <packaging>pom</packaging>
-    <inceptionYear>2026</inceptionYear>
     <scm>
         <connection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</connection>
         <developerConnection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</developerConnection>
-        <url>https://github.com/DANS-KNAW/${project.artifactId}</url>
         <tag>HEAD</tag>
+        <url>https://github.com/DANS-KNAW/${project.artifactId}</url>
     </scm>
 
     <properties>
@@ -69,7 +66,6 @@
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
 
-
         <!-- Library versions -->
         <dropwizard.version>3.0.16</dropwizard.version>
         <dropwizard-testing.version>3.0.16</dropwizard-testing.version>
@@ -90,7 +86,8 @@
         <hsqldb.version>2.7.4</hsqldb.version>
 
         <!-- Formats -->
-        <bagit.version>5.4.0</bagit.version><!-- not yet in https://mvnrepository.com/artifact/nl.knaw.dans/bagit -->
+        <bagit.version>5.4.0</bagit.version>
+        <!-- not yet in https://mvnrepository.com/artifact/nl.knaw.dans/bagit -->
         <zip4j.version>2.11.5</zip4j.version>
         <jgit.version>7.3.0.202506031305-r</jgit.version>
         <tika.version>3.2.2</tika.version>
@@ -155,9 +152,9 @@
     <dependencyManagement>
         <dependencies>
             <!--
-                Dependencies imported with DropWizard should not be overridden. We should go with the version of
-                each library that DropWizard wants to ensure it works smoothly.
-            -->
+                      Dependencies imported with DropWizard should not be overridden. We should go with the version of
+                      each library that DropWizard wants to ensure it works smoothly.
+                  -->
             <dependency>
                 <groupId>io.dropwizard</groupId>
                 <artifactId>dropwizard-dependencies</artifactId>
@@ -525,14 +522,26 @@
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>com.github.ekryd.sortpom</groupId>
+                    <artifactId>sortpom-maven-plugin</artifactId>
+                    <version>4.0.0</version>
+                    <configuration>
+                        <nrOfIndentSpace>4</nrOfIndentSpace>
+                        <indentBlankLines>false</indentBlankLines>
+                        <indentSchemaLocation>false</indentSchemaLocation>
+                        <lineSeparator>\n</lineSeparator>
+                        <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
+                        <createBackupFile>false</createBackupFile>
+                        <sortProperties>false</sortProperties>
+                        <sortDependencies/>
+                        <keepBlankLines>true</keepBlankLines>
+                        <expandEmptyElements>false</expandEmptyElements>
+                    </configuration>
+                </plugin>
+
                 <!-- maven-compiler-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -541,8 +550,8 @@
                     <configuration>
                         <release>${java.version}</release>
                         <!-- By default project.build.sourceEncoding is not used by the compiler plug-in, and
-                             it defaults to ASCII, which messed up some unit tests that specifically used
-                             files with Greek letters in it. -->
+                                         it defaults to ASCII, which messed up some unit tests that specifically used
+                                         files with Greek letters in it. -->
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <excludes>
                             <exclude>**/package.html</exclude>
@@ -573,18 +582,18 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>${maven-source-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <includePom>true</includePom>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <!-- maven-jar-plugin -->
                 <plugin>
@@ -634,11 +643,11 @@
                 <!-- maven-release-plugin -->
                 <plugin>
                     <!--
-                    We rely on the maven-deploy-plugin that is included by default.
-                    You can use it on its own to deploy a snapshot, but maven-release-plugin
-                    also uses it to perform the deploy of the release when calling
-                    mvn release:perform.
-                    -->
+                              We rely on the maven-deploy-plugin that is included by default.
+                              You can use it on its own to deploy a snapshot, but maven-release-plugin
+                              also uses it to perform the deploy of the release when calling
+                              mvn release:perform.
+                              -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven-release-plugin.version}</version>
@@ -684,10 +693,10 @@
                     </configuration>
                     <executions>
                         <execution>
-                            <phase>process-sources</phase>
                             <goals>
                                 <goal>check</goal>
                             </goals>
+                            <phase>process-sources</phase>
                         </execution>
                     </executions>
                 </plugin>
@@ -718,33 +727,41 @@
                         </execution>
                         <execution>
                             <id>report</id>
-                            <phase>test</phase>
                             <goals>
                                 <goal>report</goal>
                             </goals>
+                            <phase>test</phase>
                         </execution>
                     </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
-
 
     <profiles>
         <profile>
             <id>nexus</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <distributionManagement>
+                <repository>
+                    <id>nexus-releases</id>
+                    <!-- Final slash is important for Nexus! -->
+                    <url>https://maven.dans.knaw.nl/releases/</url>
+                </repository>
                 <!-- Credentials for server are defined in ~/.m2/settings.xml -->
                 <snapshotRepository>
                     <id>nexus-snapshots</id>
                     <!-- Final slash is important for Nexus! -->
                     <url>https://maven.dans.knaw.nl/snapshots/</url>
                 </snapshotRepository>
-                <repository>
-                    <id>nexus-releases</id>
-                    <!-- Final slash is important for Nexus! -->
-                    <url>https://maven.dans.knaw.nl/releases/</url>
-                </repository>
             </distributionManagement>
         </profile>
         <profile>
@@ -761,10 +778,10 @@
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
-                                <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <phase>verify</phase>
                             </execution>
                         </executions>
                     </plugin>
