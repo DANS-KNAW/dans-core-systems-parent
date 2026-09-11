@@ -34,6 +34,7 @@
             <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+
     <developers>
         <developer>
             <name>DANS Core Systems Team</name>
@@ -41,6 +42,7 @@
             <organizationUrl>https://dans.knaw.nl</organizationUrl>
         </developer>
     </developers>
+
     <scm>
         <connection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</connection>
         <developerConnection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</developerConnection>
@@ -117,6 +119,7 @@
         <jersey-media-jaxb.version>2.35</jersey-media-jaxb.version>
 
         <!-- Misc utilities -->
+        <plexus-utils.version>3.6.1</plexus-utils.version>
         <quartz.version>2.5.0</quartz.version>
         <velocity-engine-core.version>2.4.1</velocity-engine-core.version>
         <json-path.version>2.10.0</json-path.version>
@@ -370,6 +373,11 @@
 
             <!-- Misc utilities -->
             <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-utils</artifactId>
+                <version>${plexus-utils.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
                 <version>${quartz.version}</version>
@@ -458,6 +466,39 @@
                 <artifactId>commons-collections4</artifactId>
                 <version>${commons-collections4.version}</version>
             </dependency>
+
+            <!-- Plug-in-related dependencies -->
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-core</artifactId>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-model</artifactId>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-artifact</artifactId>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
 
             <!-- Open API -->
             <dependency>
