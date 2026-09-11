@@ -16,13 +16,12 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nl.datastations</groupId>
     <artifactId>dans-core-systems-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.2.0</version>
     <packaging>pom</packaging>
     <name>DANS Core Systems Parent POM</name>
     <description>Parent POM for DANS Core Systems libraries</description>
@@ -46,7 +45,7 @@
     <scm>
         <connection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</connection>
         <developerConnection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v0.2.0</tag>
         <url>https://dans-knaw.github.io/${project.artifactId}</url>
     </scm>
 
@@ -561,7 +560,7 @@
                         <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
                         <createBackupFile>false</createBackupFile>
                         <sortProperties>false</sortProperties>
-                        <sortDependencies/>
+                        <sortDependencies />
                         <keepBlankLines>true</keepBlankLines>
                         <expandEmptyElements>false</expandEmptyElements>
                         <verifyFail>stop</verifyFail>
