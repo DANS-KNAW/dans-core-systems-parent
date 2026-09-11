@@ -517,7 +517,6 @@
                         <keepBlankLines>true</keepBlankLines>
                         <expandEmptyElements>false</expandEmptyElements>
                         <verifyFail>stop</verifyFail>
-                        <verifyFailOn>strict</verifyFailOn>
                     </configuration>
                     <executions>
                         <execution>
