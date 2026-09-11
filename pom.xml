@@ -519,6 +519,15 @@
                         <verifyFail>stop</verifyFail>
                         <verifyFailOn>strict</verifyFailOn>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>verify-pom-order</id>
+                            <goals>
+                                <goal>verify</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <!-- maven-compiler-plugin -->
@@ -758,15 +767,6 @@ limitations under the License.
             <plugin>
                 <groupId>com.github.ekryd.sortpom</groupId>
                 <artifactId>sortpom-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>verify-pom-order</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                        <phase>verify</phase>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
