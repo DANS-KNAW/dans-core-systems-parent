@@ -21,7 +21,7 @@
 
     <groupId>nl.datastations</groupId>
     <artifactId>dans-core-systems-parent</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>DANS Core Systems Parent POM</name>
     <description>Parent POM for DANS Core Systems libraries</description>
@@ -45,7 +45,7 @@
     <scm>
         <connection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</connection>
         <developerConnection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</developerConnection>
-        <tag>v0.2.0</tag>
+        <tag>HEAD</tag>
         <url>https://dans-knaw.github.io/${project.artifactId}</url>
     </scm>
 
