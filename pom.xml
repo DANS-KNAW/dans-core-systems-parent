@@ -134,6 +134,7 @@
         <memoryfilesystem.version>2.8.1</memoryfilesystem.version>
         <jtar.version>2.3</jtar.version>
         <mockito-inline.version>5.2.0</mockito-inline.version>
+        <assertj-core.version>3.27.7</assertj-core.version>
 
         <!-- Code generation -->
         <okhttp.version>4.12.0</okhttp.version>
@@ -496,6 +497,11 @@
                 <version>${jaxb-impl.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj-core.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -773,7 +779,7 @@ limitations under the License.
 
     <profiles>
         <profile>
-            <id>dans</id>
+            <id>nexus</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
