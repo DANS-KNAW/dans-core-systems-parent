@@ -54,6 +54,7 @@
         <java.version>21</java.version>
         <javadoc.failOnWarnings>true</javadoc.failOnWarnings>
         <javadoc.doclint>none</javadoc.doclint>
+        <mockito.agent/>
 
         <!-- Plugin versions -->
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
@@ -75,14 +76,15 @@
         <dropwizard.version>3.0.16</dropwizard.version>
 
         <!-- DANS libs -->
-        <dans-java-utils.version>2.10.1</dans-java-utils.version>
-        <dans-bagit-lib.version>1.2.1</dans-bagit-lib.version>
-        <dans-validation-lib.version>1.1.0</dans-validation-lib.version>
-        <dans-converter-lib.version>0.2.0</dans-converter-lib.version>
-        <dans-dataverse-client-lib.version>2.2.3</dans-dataverse-client-lib.version>
-        <dans-layer-store-lib.version>0.12.0</dans-layer-store-lib.version>
-        <dans-ocfl-java-extensions-lib.version>0.11.0</dans-ocfl-java-extensions-lib.version>
-        <dans-schema-lib.version>1.0.0</dans-schema-lib.version>
+        <dans-java-utils.version>5.0.0</dans-java-utils.version>
+        <dans-bagit-lib.version>2.0.0</dans-bagit-lib.version>
+        <dans-validation-lib.version>2.0.0</dans-validation-lib.version>
+        <dans-jackson-converter-lib.version>0.1.0</dans-jackson-converter-lib.version>
+        <dans-jpa-converter-lib.version>0.1.0</dans-jpa-converter-lib.version>
+        <dans-dataverse-client-lib.version>3.0.0</dans-dataverse-client-lib.version>
+        <dans-layer-store-lib.version>4.0.0</dans-layer-store-lib.version>
+        <dans-ocfl-java-extensions-lib.version>4.0.0</dans-ocfl-java-extensions-lib.version>
+        <dans-schema-lib.version>2.0.0</dans-schema-lib.version>
 
         <!-- Database -->
         <postgresql.version>42.7.12</postgresql.version>
@@ -92,7 +94,7 @@
         <zip4j.version>2.11.5</zip4j.version>
         <jgit.version>7.3.0.202506031305-r</jgit.version>
         <tika.version>3.2.2</tika.version>
-        <ocfl-java.version>2.2.2</ocfl-java.version>
+        <ocfl-java.version>2.2.3</ocfl-java.version>
         <apache-jena-libs.version>5.5.0</apache-jena-libs.version>
         <jsonld-java.version>0.13.5</jsonld-java.version>
 
@@ -166,7 +168,7 @@
             <dependency>
                 <groupId>io.dropwizard</groupId>
                 <artifactId>dropwizard-testing</artifactId>
-                <version>${dropwizard-testing.version}</version>
+                <version>${dropwizard.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -176,17 +178,17 @@
             </dependency>
             <!-- DANS libs -->
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
+                <groupId>nl.datastations</groupId>
                 <artifactId>dans-java-utils</artifactId>
                 <version>${dans-java-utils.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
+                <groupId>nl.datastations</groupId>
                 <artifactId>dans-bagit-lib</artifactId>
                 <version>${dans-bagit-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
+                <groupId>nl.datastations</groupId>
                 <artifactId>dans-dataverse-client-lib</artifactId>
                 <version>${dans-dataverse-client-lib.version}</version>
             </dependency>
@@ -196,17 +198,22 @@
                 <version>${dd-validate-dans-bag-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
+                <groupId>nl.datastations</groupId>
                 <artifactId>dans-validation-lib</artifactId>
                 <version>${dans-validation-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dans-converter-lib</artifactId>
-                <version>${dans-converter-lib.version}</version>
+                <groupId>nl.datastations</groupId>
+                <artifactId>dans-jackson-converter-lib</artifactId>
+                <version>${dans-jackson-converter-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
+                <groupId>nl.datastations</groupId>
+                <artifactId>dans-jpa-converter-lib</artifactId>
+                <version>${dans-jpa-converter-lib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.datastations</groupId>
                 <artifactId>dans-ocfl-java-extensions-lib</artifactId>
                 <version>${dans-ocfl-java-extensions-lib.version}</version>
             </dependency>
@@ -221,7 +228,7 @@
                 <version>${dd-dans-sword2-examples.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
+                <groupId>nl.datastations</groupId>
                 <artifactId>dans-layer-store-lib</artifactId>
                 <version>${dans-layer-store-lib.version}</version>
             </dependency>
@@ -571,7 +578,7 @@
                             <goals>
                                 <goal>verify</goal>
                             </goals>
-                            <phase>verify</phase>
+                            <phase>initialize</phase>
                         </execution>
                     </executions>
                 </plugin>
