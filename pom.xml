@@ -21,7 +21,7 @@
 
     <groupId>nl.datastations</groupId>
     <artifactId>dans-core-systems-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>DANS Core Systems Parent POM</name>
     <description>Parent POM for DANS Core Systems libraries</description>
@@ -57,23 +57,23 @@
         <mockito.agent/>
 
         <!-- Plugin versions -->
-        <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
-        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-        <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
-        <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+        <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
+        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
+        <maven-jar-plugin.version>3.5.1</maven-jar-plugin.version>
+        <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
+        <maven-dependency-plugin.version>3.11.0</maven-dependency-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-        <license-maven-plugin.version>4.6</license-maven-plugin.version>
+        <license-maven-plugin.version>5.1.2</license-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.11.0</central-publishing-maven-plugin.version>
         <sortpom-maven-plugin.version>4.0.0</sortpom-maven-plugin.version>
 
         <!-- Library versions -->
-        <dropwizard.version>3.0.16</dropwizard.version>
+        <dropwizard.version>3.0.17</dropwizard.version>
 
         <!-- DANS libs -->
         <dans-java-utils.version>5.0.0</dans-java-utils.version>
@@ -87,69 +87,69 @@
         <dans-schema-lib.version>2.0.0</dans-schema-lib.version>
 
         <!-- Database -->
-        <postgresql.version>42.7.12</postgresql.version>
+        <postgresql.version>42.7.13</postgresql.version>
         <hsqldb.version>2.7.4</hsqldb.version>
 
         <!-- Formats -->
-        <zip4j.version>2.11.5</zip4j.version>
-        <jgit.version>7.3.0.202506031305-r</jgit.version>
-        <tika.version>3.2.2</tika.version>
+        <zip4j.version>2.11.6</zip4j.version>
+        <jgit.version>7.8.0.202609011348-r</jgit.version>
+        <tika.version>4.0.0</tika.version>
         <ocfl-java.version>2.2.3</ocfl-java.version>
-        <apache-jena-libs.version>5.5.0</apache-jena-libs.version>
-        <jsonld-java.version>0.13.5</jsonld-java.version>
+        <apache-jena-libs.version>6.2.0</apache-jena-libs.version>
+        <jsonld-java.version>0.13.6</jsonld-java.version>
 
         <!-- Apache Commons -->
-        <commons-io.version>2.20.0</commons-io.version>
-        <commons-codec.version>1.19.0</commons-codec.version>
-        <commons-lang3.version>3.19.0</commons-lang3.version>
-        <commons-collections4.version>4.5.0</commons-collections4.version>
-        <commons-exec.version>1.5.0</commons-exec.version>
-        <commons-configuration2.version>2.15.0</commons-configuration2.version>
+        <commons-io.version>2.22.0</commons-io.version>
+        <commons-codec.version>1.22.1</commons-codec.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-collections4.version>4.6.0</commons-collections4.version>
+        <commons-exec.version>1.6.0</commons-exec.version>
+        <commons-configuration2.version>2.15.1</commons-configuration2.version>
         <commons-csv.version>1.14.1</commons-csv.version>
-        <commons-daemon.version>1.4.1</commons-daemon.version>
-        <commons-dbcp2.version>2.13.0</commons-dbcp2.version>
+        <commons-daemon.version>1.6.1</commons-daemon.version>
+        <commons-dbcp2.version>2.14.0</commons-dbcp2.version>
         <commons-compress.version>1.28.0</commons-compress.version>
         <commons-fileupload.version>1.6.0</commons-fileupload.version>
 
         <!-- XML -->
-        <!-- We cannot go to the latest version, until we go to jakarta -->
-        <javax.xml.jaxb-api.version>2.3.1</javax.xml.jaxb-api.version>
-        <jaxb-runtime.version>2.3.1</jaxb-runtime.version>
-        <jaxb-api.version>2.3.1</jaxb-api.version>
-        <jaxb-impl.version>2.3.3</jaxb-impl.version>
-        <jersey-media-jaxb.version>2.35</jersey-media-jaxb.version>
+        <!-- We cannot go to the latest version until we go to jakarta -->
+        <javax.xml.jaxb-api.version>2.4.0-b180830.0359</javax.xml.jaxb-api.version>
+        <jaxb-runtime.version>4.0.9</jaxb-runtime.version>
+        <jaxb-api.version>2.4.0-b180830.0359</jaxb-api.version>
+        <jaxb-impl.version>4.0.9</jaxb-impl.version>
+        <jersey-media-jaxb.version>2.47</jersey-media-jaxb.version>
 
         <!-- Misc utilities -->
-        <plexus-utils.version>3.6.1</plexus-utils.version>
-        <quartz.version>2.5.0</quartz.version>
+        <plexus-utils.version>4.1.0</plexus-utils.version>
+        <quartz.version>2.5.2</quartz.version>
         <velocity-engine-core.version>2.4.1</velocity-engine-core.version>
-        <json-path.version>2.10.0</json-path.version>
+        <json-path.version>3.0.0</json-path.version>
         <jersey-media-json-jackson.version>2.47</jersey-media-json-jackson.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
         <jbcrypt.version>0.4</jbcrypt.version>
-        <solr-solrj.version>9.9.0</solr-solrj.version>
-        <mapstruct.version>1.6.0</mapstruct.version>
-        <lombok.version>1.18.42</lombok.version>
+        <solr-solrj.version>10.0.0</solr-solrj.version>
+        <mapstruct.version>1.7.0.Beta2</mapstruct.version>
+        <lombok.version>1.18.48</lombok.version>
         <jsr305.version>3.0.2</jsr305.version>
-        <joda-time.version>2.14.0</joda-time.version>
+        <joda-time.version>2.14.3</joda-time.version>
         <picocli.version>4.7.7</picocli.version>
         <javax.activation.version>1.1.1</javax.activation.version>
         <apiguardian-api.version>1.1.2</apiguardian-api.version>
-        <memoryfilesystem.version>2.8.1</memoryfilesystem.version>
+        <memoryfilesystem.version>2.8.2</memoryfilesystem.version>
         <jtar.version>2.3</jtar.version>
         <mockito-inline.version>5.2.0</mockito-inline.version>
-        <assertj-core.version>3.27.7</assertj-core.version>
+        <assertj-core.version>4.0.0-M1</assertj-core.version>
 
         <!-- Code generation -->
-        <okhttp.version>4.12.0</okhttp.version>
+        <okhttp.version>5.5.0</okhttp.version>
         <gson-fire.version>1.9.0</gson-fire.version>
-        <gson.version>2.13.2</gson.version>
-        <swagger-core.version>1.6.16</swagger-core.version>
+        <gson.version>2.14.0</gson.version>
+        <swagger-core.version>2.0.0-rc2</swagger-core.version>
 
         <httpclient.version>4.5.14</httpclient.version>
-        <httpcore5.version>5.3.6</httpcore5.version>
+        <httpcore5.version>5.5-beta2</httpcore5.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <plexus-archiver.version>4.8.0</plexus-archiver.version>
+        <plexus-archiver.version>4.14.0</plexus-archiver.version>
     </properties>
 
     <dependencyManagement>
