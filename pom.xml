@@ -75,14 +75,14 @@
         <dropwizard.version>3.0.17</dropwizard.version>
 
         <!-- DANS libs -->
-        <dans-java-utils.version>5.0.0</dans-java-utils.version>
-        <dans-bagit-lib.version>2.0.0</dans-bagit-lib.version>
-        <dans-validation-lib.version>2.0.0</dans-validation-lib.version>
-        <dans-jackson-converter-lib.version>0.1.0</dans-jackson-converter-lib.version>
-        <dans-jpa-converter-lib.version>0.1.0</dans-jpa-converter-lib.version>
+        <dans-java-utils.version>5.0.1</dans-java-utils.version>
+        <dans-bagit-lib.version>2.0.1</dans-bagit-lib.version>
+        <dans-validation-lib.version>2.0.2</dans-validation-lib.version>
+        <dans-jackson-converter-lib.version>0.1.2</dans-jackson-converter-lib.version>
+        <dans-jpa-converter-lib.version>0.1.2</dans-jpa-converter-lib.version>
         <dans-dataverse-client-lib.version>3.0.0</dans-dataverse-client-lib.version>
-        <dans-layer-store-lib.version>4.0.0</dans-layer-store-lib.version>
-        <dans-ocfl-java-extensions-lib.version>4.0.0</dans-ocfl-java-extensions-lib.version>
+        <dans-layer-store-lib.version>4.0.1</dans-layer-store-lib.version>
+        <dans-ocfl-java-extensions-lib.version>4.0.1</dans-ocfl-java-extensions-lib.version>
         <dans-schema-lib.version>1.1.0</dans-schema-lib.version>
 
         <!-- Database -->
