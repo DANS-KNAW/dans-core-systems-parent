@@ -103,7 +103,6 @@
 
         <!-- Formats -->
         <zip4j.version>2.11.6</zip4j.version>
-        <jgit.version>7.8.0.202609011348-r</jgit.version>
         <tika.version>4.0.0</tika.version>
         <ocfl-java.version>2.2.3</ocfl-java.version>
         <apache-jena-libs.version>6.2.0</apache-jena-libs.version>
@@ -120,8 +119,6 @@
         <commons-exec.version>1.6.0</commons-exec.version>
         <commons-configuration2.version>2.15.1</commons-configuration2.version>
         <commons-csv.version>1.14.1</commons-csv.version>
-        <commons-daemon.version>1.6.1</commons-daemon.version>
-        <commons-dbcp2.version>2.14.0</commons-dbcp2.version>
         <commons-compress.version>1.28.0</commons-compress.version>
         <commons-fileupload.version>1.6.0</commons-fileupload.version>
 
@@ -136,14 +133,10 @@
 
         <!-- Misc utilities -->
         <json-schema-validator.version>3.0.7</json-schema-validator.version>
-        <plexus-utils.version>4.1.0</plexus-utils.version>
-        <quartz.version>2.5.2</quartz.version>
-        <velocity-engine-core.version>2.4.1</velocity-engine-core.version>
         <json-path.version>3.0.0</json-path.version>
         <jersey-media-json-jackson.version>2.47</jersey-media-json-jackson.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
         <jbcrypt.version>0.4</jbcrypt.version>
-        <solr-solrj.version>10.0.0</solr-solrj.version>
         <mapstruct.version>1.7.0.Beta2</mapstruct.version>
         <lombok.version>1.18.48</lombok.version>
         <jsr305.version>3.0.2</jsr305.version>
@@ -157,9 +150,6 @@
         <assertj-core.version>4.0.0-M1</assertj-core.version>
 
         <!-- Code generation -->
-        <okhttp.version>5.5.0</okhttp.version>
-        <gson-fire.version>1.9.0</gson-fire.version>
-        <gson.version>2.14.0</gson.version>
         <swagger-core.version>2.0.0-rc2</swagger-core.version>
 
         <httpclient.version>4.5.14</httpclient.version>
@@ -254,11 +244,6 @@
 
             <!-- Formats -->
             <dependency>
-                <groupId>org.eclipse.jgit</groupId>
-                <artifactId>org.eclipse.jgit</artifactId>
-                <version>${jgit.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>net.lingala.zip4j</groupId>
                 <artifactId>zip4j</artifactId>
                 <version>${zip4j.version}</version>
@@ -327,16 +312,6 @@
                 <version>${commons-csv.version}</version>
             </dependency>
             <dependency>
-                <groupId>commons-daemon</groupId>
-                <artifactId>commons-daemon</artifactId>
-                <version>${commons-daemon.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-dbcp2</artifactId>
-                <version>${commons-dbcp2.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>${commons-compress.version}</version>
@@ -401,21 +376,6 @@
                 <version>${json-schema-validator.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.plexus</groupId>
-                <artifactId>plexus-utils</artifactId>
-                <version>${plexus-utils.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.quartz-scheduler</groupId>
-                <artifactId>quartz</artifactId>
-                <version>${quartz.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity-engine-core</artifactId>
-                <version>${velocity-engine-core.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.jayway.jsonpath</groupId>
                 <artifactId>json-path</artifactId>
                 <version>${json-path.version}</version>
@@ -436,11 +396,6 @@
                 <groupId>org.mindrot</groupId>
                 <artifactId>jbcrypt</artifactId>
                 <version>${jbcrypt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.solr</groupId>
-                <artifactId>solr-solrj</artifactId>
-                <version>${solr-solrj.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>
@@ -528,26 +483,6 @@
             </dependency>
 
             <!-- Open API -->
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>logging-interceptor</artifactId>
-                <version>${okhttp.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>${gson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.gsonfire</groupId>
-                <artifactId>gson-fire</artifactId>
-                <version>${gson-fire.version}</version>
-            </dependency>
             <dependency>
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
