@@ -91,10 +91,11 @@
         <dans-validation-lib.version>2.0.2</dans-validation-lib.version>
         <dans-jackson-converter-lib.version>0.1.2</dans-jackson-converter-lib.version>
         <dans-jpa-converter-lib.version>0.1.2</dans-jpa-converter-lib.version>
-        <dans-dataverse-client-lib.version>3.0.1</dans-dataverse-client-lib.version>
+        <dans-dataverse-client-lib.version>4.0.0</dans-dataverse-client-lib.version>
         <dans-layer-store-lib.version>4.0.1</dans-layer-store-lib.version>
         <dans-ocfl-java-extensions-lib.version>4.0.1</dans-ocfl-java-extensions-lib.version>
         <dans-schema-lib.version>1.1.0</dans-schema-lib.version>
+        <dans-ocfl-extensions.version>1.1.0</dans-ocfl-extensions.version>
 
         <!-- Database -->
         <postgresql.version>42.7.13</postgresql.version>
@@ -109,6 +110,8 @@
         <jsonld-java.version>0.13.6</jsonld-java.version>
 
         <!-- Apache Commons -->
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
         <commons-validator.version>1.11.0</commons-validator.version>
         <commons-io.version>2.22.0</commons-io.version>
         <commons-codec.version>1.22.1</commons-codec.version>
@@ -132,6 +135,7 @@
         <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
 
         <!-- Misc utilities -->
+        <json-schema-validator.version>3.0.7</json-schema-validator.version>
         <plexus-utils.version>4.1.0</plexus-utils.version>
         <quartz.version>2.5.2</quartz.version>
         <velocity-engine-core.version>2.4.1</velocity-engine-core.version>
@@ -206,11 +210,6 @@
                 <version>${dans-dataverse-client-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-validate-dans-bag-api</artifactId>
-                <version>${dd-validate-dans-bag-api.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>nl.datastations</groupId>
                 <artifactId>dans-validation-lib</artifactId>
                 <version>${dans-validation-lib.version}</version>
@@ -231,39 +230,14 @@
                 <version>${dans-ocfl-java-extensions-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-dataverse-ingest-api</artifactId>
-                <version>${dd-dataverse-ingest-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-dans-sword2-examples</artifactId>
-                <version>${dd-dans-sword2-examples.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>nl.datastations</groupId>
                 <artifactId>dans-layer-store-lib</artifactId>
                 <version>${dans-layer-store-lib.version}</version>
             </dependency>
             <dependency>
                 <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-validate-bagpack-api</artifactId>
-                <version>${dd-validate-bagpack-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-vault-metadata-api</artifactId>
-                <version>${dd-vault-metadata-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-virus-scan-api</artifactId>
-                <version>${dd-virus-scan-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>nl.knaw.dans</groupId>
-                <artifactId>dd-vault-catalog-api</artifactId>
-                <version>${dd-vault-catalog-api.version}</version>
+                <artifactId>dans-ocfl-extensions</artifactId>
+                <version>${dans-ocfl-extensions.version}</version>
             </dependency>
 
             <!-- Database -->
@@ -317,6 +291,16 @@
             </dependency>
 
             <!-- Apache Commons -->
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-configuration</groupId>
+                <artifactId>commons-configuration</artifactId>
+                <version>${commons-configuration.version}</version>
+            </dependency>
             <dependency>
                 <groupId>commons-validator</groupId>
                 <artifactId>commons-validator</artifactId>
@@ -411,6 +395,11 @@
             </dependency>
 
             <!-- Misc utilities -->
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <version>${json-schema-validator.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
